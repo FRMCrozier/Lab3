@@ -110,6 +110,27 @@ public class Java3 {
         System.out.println("The extension of this file: " + extention);
 
     }
+    
+     /**
+     * Дана строка, содержащая латинские буквы и круглые скобки. Если скобки
+     * расставлены правильно (т. е. каждой открывающей соответствует
+     * одна закрывающая), то вывести число 0. В противном случае
+     * вывести или номер позиции, в которой расположена первая
+     * ошибочная закрывающая скобка, или, если закрывающих скобок не хватает, число −1.
+     */
+    private static int Sixth(String str){
+        int n = 0;
+        for (var c: str.toCharArray()
+        ) {
+            if (c=='(')
+                n++;
+            else if(c==')')
+                n--;
+            if(n<0)
+                return str.indexOf(c);
+        }
+        return n==0 ? 0: -1;
+    }
 
     public static void main(String[] args) {
         System.out.println("TASK 5");
@@ -122,5 +143,15 @@ public class Java3 {
         Fourth();
         System.out.println("\nADDITIONAL TASK 59");
         Fifth();
+        System.out.println("\nADDITIONAL TASK 69");
+        String str = "(Hello world)";
+        String str1 = "((Hello worl)d(";
+        String str2 = "(Hello w))orld";
+        System.out.println("Your string:\n" + str);
+        System.out.println(Sixth(str));
+        System.out.println("Your string:\n" + str1);
+        System.out.println(Sixth(str1));
+        System.out.println("Your string:\n" + str2);
+        System.out.println(Sixth(str2));
     }
 }
