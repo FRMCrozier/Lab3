@@ -54,7 +54,7 @@ public class Java3 {
     private static void Third() {
         String str = "РУАЛЬ АМУНДСЕН  ОТКРЫЛ  СЕВЕРОЗАПАДНЫЙ ПРОХОД ЧЕРЕЗ  АРКТИКУ";
         System.out.println("Your string: \n" + str);
-        str = str.replaceAll("  "," ");
+        str = str.replaceAll(" +"," ");
         String [] strArray = str.split(" ");
         Arrays.sort(strArray);
         str = Arrays.toString(strArray).replaceAll("\\p{P}", "");
@@ -105,7 +105,7 @@ public class Java3 {
      */
     private static void Fifth() {
         String path = "C:\\Program Files\\Git\\git-cmd.exe";
-        String extention = path.substring(path.indexOf('.')+1,path.length());
+        String extention = path.substring(path.lastindexOf('.')+1);
         System.out.println("The path to your file: " + path);
         System.out.println("The extension of this file: " + extention);
 
@@ -121,7 +121,7 @@ public class Java3 {
      */
     private static int Sixth(String str){
         int n = 0;
-        for (var c: str.toCharArray()
+        for (char c: str.toCharArray()
         ) {
             if (c=='(')
                 n++;
